@@ -146,6 +146,10 @@ board.on('ready', function(){
     var rgb = new five.Led.RGB({
         pins: [9, 10, 11]
     });
+    
+    rgb.color( "#FF0000" ); // color method expects string.
+    rgb.intensity( 50 ); // intensity is the correct method here instead of brightness.
+    
 
     var motor = new five.Motor({
         pins: {

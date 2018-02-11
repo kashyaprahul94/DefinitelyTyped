@@ -71,14 +71,14 @@ board.on('ready', function(){
         freq: 100      // optional
     });
 
-    var motion = new five.IR.Motion(7);
+    var motion = new five.Motion(7);
 
 // Options object with pin property
-    var motion = new five.IR.Motion({
+    var motion = new five.Motion({
         pin: 7
     });
 
-    var proximity = new five.IR.Proximity({
+    var proximity = new five.Proximity({
         controller: "GP2Y0A21YK",
         pin: "A0"
     });
@@ -146,6 +146,10 @@ board.on('ready', function(){
     var rgb = new five.Led.RGB({
         pins: [9, 10, 11]
     });
+    
+    rgb.color( "#FF0000" ); // color method expects string.
+    rgb.intensity( 50 ); // intensity is the correct method here instead of brightness.
+    
 
     var motor = new five.Motor({
         pins: {
